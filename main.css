@@ -1,30 +1,27 @@
 /**
  * @name RedFox™ Custom Discord Theme
- * @author Syr0nix
- * @version 1.0.0
  * @description A full RedFox™ style theme with red and black neon accents, glowing effects, and custom UI elements.
  */
 
 /* === Global Styles for RedFox Theme === */
 :root,
-.theme-dark, 
+.theme-dark,
 .theme-light {
-  --rgb-highlight: 255, 0, 0; /* Main highlight color (red) */
-  --rgb-background: 0, 0, 0; /* Background color */
-  --rgb-text: 255, 255, 255; /* Main text color */
-  --rgb-close-button: 212, 18, 39; /* Close button color */
-  --rgb-online-color: 255, 0, 0; /* Online status color (red) */
-  --rgb-afk-color: 255, 255, 51; /* AFK status color (yellow) */
-  --rgb-dnd-color: 255, 0, 0; /* DND status color (red) */
-  --rgb-streaming-color: 188, 19, 254; /* Streaming status color (purple) */
+  --highlight: rgb(255, 0, 0); /* Main highlight color (red) */
+  --background: rgb(0, 0, 0); /* Main background color (black) */
+  --text: rgb(255, 255, 255); /* Main text color (white) */
+  --close-button: rgb(212, 18, 39); /* Close button color */
+  --online-color: rgb(57, 255, 20); /* Online status color */
+  --afk-color: rgb(255, 255, 51); /* AFK status color */
+  --dnd-color: rgb(255, 0, 0); /* DND status color */
+  --streaming-color: rgb(188, 19, 254); /* Streaming status color */
 
-  --transition-time: .3s; /* Animation speed */
-
-  --background-image: unset; /* Add your custom background image URL here */
-  --background-position: center;
-  --background-size: cover;
-  --background-blur: 5px; /* Background blur for readability */
-  --background-brightness: 100%;
+  --transition-time: 0.3s; /* Speed of animations */
+  --background-image: unset; /* Custom background image URL */
+  --background-position: center; /* Position of background image */
+  --background-size: cover; /* Scale background image */
+  --background-blur: 5px; /* Background blur for better text readability */
+  --background-brightness: 100%; /* Background brightness */
 }
 
 /* === Animated Red/Black Gradient Background === */
@@ -40,7 +37,7 @@
   100% { background-position: 0% 50%; }
 }
 
-/* === Sidebar - Server & Channel Section === */
+/* === Sidebar and Server Section === */
 #app-mount .sidebar-2K8pFf {
   background-color: rgba(34, 0, 0, 0.85) !important;
   border-right: 1px solid #ff3c3c !important;
@@ -55,12 +52,6 @@
 #app-mount .sidebar-2K8pFf .channel-3ZQGZC:hover {
   background-color: #1a0000 !important;
   color: #ff5a5a !important;
-}
-
-#app-mount .sidebar-2K8pFf .selected-3Ye8F4 {
-  background-color: #220000 !important;
-  color: #ff5a5a !important;
-  box-shadow: 0 0 15px #ff3c3c !important;
 }
 
 /* === User List - Online / Idle / Do Not Disturb === */
@@ -80,43 +71,48 @@
   color: #ffffff !important;
 }
 
-#app-mount .status-2V78du {
-  background-color: #ff3c3c !important;
-  box-shadow: 0 0 10px #ff3c3c !important;
+/* === Button Styles - Custom Neon Hover Effects === */
+button,
+[role="button"] {
+  background: #1a0000 !important;
+  color: #ff6666 !important;
+  border: 1px solid #ff0000 !important;
+  border-radius: 5px !important;
+  transition: background 0.2s, box-shadow 0.2s;
 }
 
-/* === Topbar - Header Section === */
-#app-mount .topbar-3eO-ck {
-  background-color: rgba(0, 0, 0, 0.9) !important;
-  border-bottom: 1px solid #ff3c3c !important;
+button:hover,
+[role="button"]:hover {
+  background: #ff0000 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 8px #ff0000 !important;
 }
 
-#app-mount .topbar-3eO-ck .content-3ZgfPS {
-  color: #ff3c3c !important;
+button:focus,
+[role="button"]:focus {
+  outline: none !important;
+  box-shadow: 0 0 6px #ff0000 !important;
 }
 
-#app-mount .topbar-3eO-ck .search-bar-1whzWb {
-  background-color: #111 !important;
-  color: #ff3c3c !important;
-  border: 1px solid #ff3c3c !important;
-  border-radius: 6px !important;
-  transition: all 0.2s ease;
+/* === Scrollbar - Slim Red Glow === */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-#app-mount .topbar-3eO-ck .search-bar-1whzWb:hover {
-  background-color: #220000 !important;
-  border-color: #ff5a5a !important;
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.6) !important;
 }
 
-/* === Messages Area === */
-.message-3CqZyD {
-  background-color: #111 !important;
-  border-radius: 10px !important;
-  color: #ff3c3c !important;
-  padding: 8px;
-  margin-bottom: 8px;
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.8) !important;
+  border-radius: 4px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5a5a !important;
+}
+
+/* === Glowing Effects on Active / Hover Items === */
 .message-3CqZyD:hover {
   background-color: #220000 !important;
   box-shadow: 0 0 15px #ff3c3c !important;
@@ -126,95 +122,13 @@
   color: #ff3c3c !important;
 }
 
-/* === Text Inputs - Send Messages & More === */
-textarea, input {
-  background-color: #111 !important;
+/* === Profile and Hover Effects === */
+.profile-3bTh8d {
+  background-color: rgba(0, 0, 0, 0.85) !important;
   color: #ff3c3c !important;
-  border: 1px solid #ff3c3c !important;
-  border-radius: 5px !important;
-  padding: 8px;
-  transition: all 0.2s ease;
 }
 
-textarea:focus, input:focus {
-  border-color: #ff5a5a !important;
-  outline: none !important;
-}
-
-textarea:disabled, input:disabled {
-  background-color: #222 !important;
-}
-
-/* === Buttons and Interactions === */
-button, [role="button"] {
-  background: #1a0000 !important;
-  color: #ff6666 !important;
-  border: 1px solid #ff0000 !important;
-  border-radius: 5px !important;
-  transition: background 0.2s, box-shadow 0.2s;
-}
-button:hover, [role="button"]:hover {
-  background: #ff0000 !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 8px #ff0000 !important;
-}
-button:focus, [role="button"]:focus {
-  outline: none !important;
-  box-shadow: 0 0 6px #ff0000 !important;
-}
-
-/* === Glowing Effects on Buttons and Text === */
-.message-3CqZyD .markup-2BOwQy, .button-1Hf9yS:hover {
-  text-shadow: 0 0 5px #ff3c3c, 0 0 10px #ff3c3c !important;
-}
-
-button:focus, .button-1Hf9yS:focus {
-  box-shadow: 0 0 5px #ff5a5a !important;
-}
-
-/* === Notifications and Alerts === */
-.notification-3A6zN8 {
+.profile-3bTh8d:hover {
   background-color: #220000 !important;
-  color: #ff3c3c !important;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.notification-3A6zN8:hover {
-  background-color: #1a0000 !important;
-}
-
-/* === Scrollbar Styling ==== */
-
-/* Slim, red scrollbars to match theme */
-::-webkit-scrollbar {
-  width: 8px;
-  background: #0a0a0a !important;  /* dark track */
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a !important;
-}
-::-webkit-scrollbar-thumb {
-  background: #ff0000 !important;  /* red scrollbar thumb (accent) */
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #ff5555 !important;
-}
-
-/* === Voice Channel UI === */
-.voice-chat-2xgFi8 {
-  background: #1a0000 !important;
-  color: #ff3c3c !important;
-}
-
-.voice-chat-2xgFi8:hover {
-  background: #220000 !important;
-  box-shadow: 0 0 10px #ff3c3c !important;
-}
-
-/* === Custom Channel Item States (hover, active, selected) === */
-.containerDefault-7RImuF:hover, .containerDefault-7RImuF.selected, 
-.containerDefault-1bbItS:hover, .containerDefault-1bbItS.selected {
-  background-color: rgba(255, 0, 0, 0.2) !important;
+  color: #ff5a5a !important;
 }
